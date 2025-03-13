@@ -118,7 +118,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="layout-container relative z-10 px-4 sm:px-6">
+      <div className="layout-container mx-auto relative z-10 px-4 sm:px-6">
         <div className="content-wrapper max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

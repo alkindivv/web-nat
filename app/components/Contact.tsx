@@ -47,7 +47,7 @@ const Contact = () => {
       <div className="absolute bottom-10 sm:bottom-20 right-10 sm:right-20 w-48 sm:w-72 h-48 sm:h-72 bg-purple-100/20 rounded-full blur-3xl -z-10" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 sm:w-96 h-64 sm:h-96 bg-gradient-to-r from-pink-100/10 to-purple-100/10 rounded-full blur-3xl -z-10" />
 
-      <div className="layout-container relative z-10 px-4 sm:px-6">
+      <div className="container mx-auto relative z-10 px-4 sm:px-6">
         <div className="content-wrapper">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

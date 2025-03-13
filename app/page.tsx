@@ -14,6 +14,8 @@ import {
 } from "@heroicons/react/24/outline";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Achievement from "./components/Achievement";
+import Portfolio from "./components/Portfolio";
 
 // Gunakan dynamic import untuk komponen Hero
 const Hero = dynamic(() => import("./components/Hero"), {
@@ -69,8 +71,9 @@ export default function Home() {
       <main className="flex-grow">
         <Hero />
         <About />
-        <Experience />
         <Education />
+        <Experience />
+        <Portfolio />
         <Contact />
         <Footer />
       </main>
