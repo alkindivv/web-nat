@@ -21,11 +21,11 @@ export default function Navbar() {
   }, [scrolled]);
 
   const navItems = [
-    { name: "Beranda", href: "#" },
-    { name: "Tentang", href: "#about" },
-    { name: "Pengalaman", href: "#experience" },
-    { name: "Pendidikan", href: "#education" },
-    { name: "Kontak", href: "#contact" },
+    // { name: "Beranda", href: "#" },
+    { name: "About", href: "#about" },
+    { name: "Experience", href: "#experience" },
+    { name: "Education", href: "#education" },
+    { name: "Contact", href: "#contact" },
   ];
 
   return (
@@ -33,21 +33,23 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-white/80 backdrop-blur-md shadow-lg" : "bg-transparent"
+        scrolled
+          ? "bg-white/80 backdrop-blur-md shadow-lg border-b-4 border-pink-600/20"
+          : "bg-transparent"
       }`}
     >
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 sm:h-20">
-          <motion.a
+        <div className="flex justify-end items-center h-16 sm:h-20">
+          {/* <motion.a
             href="#"
             className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent"
             whileHover={{ scale: 1.05 }}
           >
             Natasya
-          </motion.a>
+          </motion.a> */}
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
+          <div className="hidden justify-end md:flex items-center space-x-4 lg:space-x-4">
             {navItems.map((item) => (
               <motion.a
                 key={item.name}

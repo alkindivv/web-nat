@@ -35,7 +35,7 @@ const Footer = () => {
   return (
     <footer className="relative overflow-hidden bg-gradient-to-b from-white to-pink-50 pt-12 sm:pt-16 pb-6 sm:pb-8">
       {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-pink-600/20 via-purple-600/20 to-pink-600/20"></div>
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-pink-600/30 via-purple-600/20 to-pink-600/20"></div>
       <div className="absolute -top-40 right-0 w-48 sm:w-72 h-48 sm:h-72 bg-pink-100/20 rounded-full blur-3xl -z-10" />
       <div className="absolute -bottom-20 left-0 w-48 sm:w-72 h-48 sm:h-72 bg-purple-100/20 rounded-full blur-3xl -z-10" />
 
