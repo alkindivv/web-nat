@@ -13,11 +13,16 @@ import {
   CalendarIcon,
 } from "@heroicons/react/24/outline";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
-// Gunakan dynamic import untuk komponen yang menggunakan window
+// Gunakan dynamic import untuk komponen Hero
 const Hero = dynamic(() => import("./components/Hero"), {
   ssr: false,
-  loading: () => <div>Loading...</div>,
+  loading: () => (
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="w-16 h-16 rounded-full border-4 border-t-pink-600 border-r-purple-600 border-b-pink-600 border-l-purple-600 border-t-transparent animate-spin"></div>
+    </div>
+  ),
 });
 
 import About from "./components/About";
@@ -67,10 +72,11 @@ export default function Home() {
         <Experience />
         <Education />
         <Contact />
+        <Footer />
       </main>
 
       {/* Enhanced Footer */}
-      <footer className="py-8 sm:py-12 bg-gradient-to-r from-pink-50 to-purple-50">
+      {/* <footer className="py-8 sm:py-12 bg-gradient-to-r from-pink-50 to-purple-50">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center items-center gap-2 text-pink-600">
             <HeartIcon className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -87,7 +93,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </footer>
+      </footer> */}
     </div>
   );
 }

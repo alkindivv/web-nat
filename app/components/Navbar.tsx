@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -19,6 +20,14 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [scrolled]);
 
+  const navItems = [
+    { name: "Beranda", href: "#" },
+    { name: "Tentang", href: "#about" },
+    { name: "Pengalaman", href: "#experience" },
+    { name: "Pendidikan", href: "#education" },
+    { name: "Kontak", href: "#contact" },
+  ];
+
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -31,66 +40,75 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16 sm:h-20">
           <motion.a
             href="#"
-            className="text-xl sm:text-2xl font-display font-bold text-pink-800"
+            className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent"
             whileHover={{ scale: 1.05 }}
           >
-            Ntsyz
+            Natasya
           </motion.a>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
-            {["About", "Experience", "Education", "Contact"].map((item) => (
+          <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
+            {navItems.map((item) => (
               <motion.a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="text-base lg:text-lg text-gray-600 hover:text-pink-600 transition-colors"
+                key={item.name}
+                href={item.href}
+                className="text-sm lg:text-base text-gray-600 hover:text-pink-600 transition-colors px-2 py-1 relative group"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                {item}
+                {item.name}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-pink-600 to-purple-600 transition-all duration-300 group-hover:w-full"></span>
               </motion.a>
             ))}
           </div>
 
           {/* Mobile Menu Button */}
           <motion.button
-            className="md:hidden text-gray-600 focus:outline-none"
+            className="md:hidden text-gray-600 focus:outline-none p-2"
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
           >
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
-              ></path>
-            </svg>
+            <div className="w-6 flex flex-col items-end justify-center gap-1.5 relative">
+              <span
+                className={`block h-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-full transition-all duration-300 ${
+                  isOpen ? "w-6 transform rotate-45 translate-y-2" : "w-6"
+                }`}
+              ></span>
+              <span
+                className={`block h-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-full transition-all duration-300 ${
+                  isOpen ? "w-0 opacity-0" : "w-4"
+                }`}
+              ></span>
+              <span
+                className={`block h-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-full transition-all duration-300 ${
+                  isOpen ? "w-6 transform -rotate-45 -translate-y-2" : "w-5"
+                }`}
+              ></span>
+            </div>
           </motion.button>
         </div>
 
         {/* Mobile Menu */}
         <motion.div
           initial={false}
-          animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
-          className={`md:hidden overflow-hidden ${isOpen ? "pb-4" : ""}`}
+          animate={{
+            height: isOpen ? "auto" : 0,
+            opacity: isOpen ? 1 : 0,
+            marginBottom: isOpen ? "1rem" : "0",
+          }}
+          className="md:hidden overflow-hidden bg-white/90 backdrop-blur-sm rounded-xl shadow-lg"
         >
-          <div className="flex flex-col space-y-4">
-            {["About", "Experience", "Education", "Contact"].map((item) => (
+          <div className="flex flex-col py-2">
+            {navItems.map((item) => (
               <motion.a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="text-base text-gray-600 hover:text-pink-600 transition-colors px-2 py-1"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                key={item.name}
+                href={item.href}
+                className="text-sm text-gray-600 hover:text-pink-600 hover:bg-pink-50 transition-colors px-4 py-3 border-b border-pink-50 last:border-b-0"
+                whileTap={{ scale: 0.98 }}
                 onClick={() => setIsOpen(false)}
               >
-                {item}
+                {item.name}
               </motion.a>
             ))}
           </div>
