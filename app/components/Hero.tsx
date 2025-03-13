@@ -151,7 +151,7 @@ const Hero = () => {
                 className="absolute inset-4 sm:inset-6 overflow-hidden rounded-full border-2 border-white shadow-xl"
               >
                 <Image
-                  src="/a.jpeg"
+                  src="/nat.jpeg"
                   alt="Natasya Artameivia"
                   fill
                   className="object-cover"
