@@ -16,48 +16,61 @@ const skills = [
       "Membangun dan memelihara hubungan positif dengan media, stakeholders, dan masyarakat",
   },
   {
-    name: "Communication Strategy",
-    description:
-      "Mengembangkan dan mengimplementasikan strategi komunikasi yang efektif untuk berbagai platform",
-  },
-  {
-    name: "Content Creation",
-    description:
-      "Membuat konten kreatif dan engaging untuk website, media sosial, dan materi promosi",
-  },
-  {
-    name: "Media Relations",
-    description:
-      "Mengelola hubungan dengan media dan mengorganisir press conference",
-  },
-  {
-    name: "Event Management",
-    description:
-      "Merencanakan dan mengeksekusi event korporat, promosi, dan gathering",
-  },
-  {
-    name: "Corporate Branding",
-    description:
-      "Mengembangkan dan menjaga konsistensi brand identity perusahaan",
-  },
-  {
-    name: "Social Media Management",
-    description:
-      "Mengelola presence dan engagement di berbagai platform media sosial",
-  },
-  {
     name: "Customer Relations",
     description: "Membangun dan mempertahankan hubungan baik dengan pelanggan",
-  },
-  {
-    name: "Financial Services",
-    description: "Menangani transaksi perbankan dan promosi produk keuangan",
   },
   {
     name: "Marketing Communications",
     description:
       "Mengintegrasikan strategi marketing dan komunikasi untuk mencapai tujuan bisnis",
   },
+  {
+    name: "Financial Services",
+    description: "Menangani transaksi perbankan dan promosi produk keuangan",
+  },
+  // {
+  //   name: "Communication Strategy",
+  //   description:
+  //     "Mengembangkan dan mengimplementasikan strategi komunikasi yang efektif untuk berbagai platform",
+  // },
+  // {
+  //   name: "Content Creation",
+  //   description:
+  //     "Membuat konten kreatif dan engaging untuk website, media sosial, dan materi promosi",
+  // },
+  // {
+  //   name: "Media Relations",
+  //   description:
+  //     "Mengelola hubungan dengan media dan mengorganisir press conference",
+  // },
+  // {
+  //   name: "Event Management",
+  //   description:
+  //     "Merencanakan dan mengeksekusi event korporat, promosi, dan gathering",
+  // },
+  // {
+  //   name: "Corporate Branding",
+  //   description:
+  //     "Mengembangkan dan menjaga konsistensi brand identity perusahaan",
+  // },
+  // {
+  //   name: "Social Media Management",
+  //   description:
+  //     "Mengelola presence dan engagement di berbagai platform media sosial",
+  // },
+  // {
+  //   name: "Customer Relations",
+  //   description: "Membangun dan mempertahankan hubungan baik dengan pelanggan",
+  // },
+  // {
+  //   name: "Financial Services",
+  //   description: "Menangani transaksi perbankan dan promosi produk keuangan",
+  // },
+  // {
+  //   name: "Marketing Communications",
+  //   description:
+  //     "Mengintegrasikan strategi marketing dan komunikasi untuk mencapai tujuan bisnis",
+  // },
 ];
 
 const stats = [
@@ -118,8 +131,10 @@ const About = () => {
         </div>
       </div>
 
+      {/* Decorative Butterflies */}
+
       <div className="layout-container mx-auto relative z-10 px-4 sm:px-6">
-        <div className="content-wrapper max-w-7xl mx-auto">
+        <div className="content-wrapper max-w-7xl mx-auto relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -127,10 +142,11 @@ const About = () => {
             viewport={{ once: true }}
             className="mb-12 sm:mb-16"
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center">
+            <h2 className="text-4xl sm:text-5xl  font-bold text-center font-dancing">
               <span className="relative inline-block">
+                <span className="">About</span>{" "}
                 <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
-                  Tentang Saya
+                  Me
                 </span>
                 <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-pink-600/30 to-purple-600/30 rounded-full"></span>
               </span>
@@ -176,19 +192,21 @@ const About = () => {
                 viewport={{ once: true }}
                 className="lg:col-span-3 space-y-6"
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 rounded-xl bg-gradient-to-br from-pink-100 to-purple-100">
+                <div className="flex items-center gap-3 mb-1">
+                  {/* <div className="p-2 rounded-xl bg-gradient-to-br from-pink-100 to-purple-100">
                     <UserIcon className="w-6 h-6 text-purple-600" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-800">
+                  </div> */}
+                  {/* <h3 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent font-dancing">
                     Marketing & Communications Professional
-                  </h3>
+                  </h3> */}
                 </div>
                 <div className="space-y-4">
                   <p className="text-base text-gray-600 leading-relaxed">
-                    Saya adalah seorang profesional di bidang Marketing dan
-                    Komunikasi dengan pengalaman yang beragam di berbagai
-                    industri terkemuka. Saat ini, saya berperan sebagai{" "}
+                    You can call me{" "}
+                    <span className="text-pink-600 font-medium">Natasya</span>,
+                    I am a professional in the field of Marketing and
+                    Communications with a diverse range of experiences in
+                    various leading industries. Currently, I am serving as an{" "}
                     <span className="text-pink-600 font-medium">
                       Executive Marketing Assistant di PT PLN Batam
                     </span>
@@ -239,22 +257,24 @@ const About = () => {
             </motion.div>
 
             {/* Bottom Section: Stats and Skills in Two Columns */}
-            <div className="grid lg:grid-cols-2 gap-12">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
               {/* Stats Column */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="space-y-6"
+                className="space-y-8"
               >
-                <div className="flex items-center gap-3 mb-6">
-                  <TrophyIcon className="w-6 h-6 text-pink-500" />
-                  <h3 className="text-lg font-semibold text-gray-800">
+                <div className="flex items-center gap-4">
+                  <div className="p-2.5 rounded-xl bg-gradient-to-br from-pink-100 to-purple-100 shadow-sm">
+                    <TrophyIcon className="w-6 h-6 text-pink-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-800">
                     Pencapaian
                   </h3>
                 </div>
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 gap-4">
                   {stats.map((stat, index) => (
                     <motion.div
                       key={index}
@@ -262,24 +282,29 @@ const About = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: 0.1 * index }}
                       viewport={{ once: true }}
-                      className="group relative"
+                      whileHover={{ scale: 1.01 }}
+                      className="group"
                     >
-                      <div className="p-4 rounded-2xl bg-white/60 backdrop-blur-sm border border-purple-100/50 hover:bg-white/80 transition-all duration-300">
-                        <div className="mb-3">
+                      <div className="p-4 sm:p-7 rounded-xl bg-white shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-md hover:border-pink-200">
+                        <div className="flex items-start gap-4">
                           <div
-                            className={`w-12 h-12 mx-auto rounded-xl bg-gradient-to-br ${stat.gradient} p-2.5 transform group-hover:scale-110 transition-transform duration-300`}
+                            className={`w-10 h-10 rounded-xl bg-gradient-to-br ${stat.gradient} p-2 flex-shrink-0 shadow-sm transition-transform duration-300 group-hover:scale-100`}
                           >
                             <stat.icon className="w-full h-full text-white" />
                           </div>
-                        </div>
-                        <div className="text-2xl font-bold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
-                          {stat.number}
-                        </div>
-                        <div className="text-sm font-medium text-gray-800 mt-1">
-                          {stat.label}
-                        </div>
-                        <div className="text-xs text-gray-600 mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          {stat.detail}
+                          <div className="flex-1">
+                            <div className="flex items-baseline gap-2 mb-2">
+                              <span className="text-xl font-bold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
+                                {stat.number}
+                              </span>
+                              <span className="text-base font-medium text-gray-800">
+                                {stat.label}
+                              </span>
+                            </div>
+                            <p className="text-sm text-gray-600 leading-relaxed mb-0 sm:mb-1.5">
+                              {stat.detail}
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </motion.div>
@@ -293,11 +318,13 @@ const About = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="space-y-6"
+                className="space-y-8"
               >
-                <div className="flex items-center gap-3 mb-6">
-                  <SparklesIcon className="w-6 h-6 text-pink-500" />
-                  <h3 className="text-lg font-semibold text-gray-800">
+                <div className="flex items-center gap-4">
+                  <div className="p-2.5 rounded-xl bg-gradient-to-br from-pink-100 to-purple-100 shadow-sm">
+                    <SparklesIcon className="w-6 h-6 text-pink-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-800">
                     Keahlian Profesional
                   </h3>
                 </div>
@@ -309,13 +336,14 @@ const About = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.4, delay: 0.1 * index }}
                       viewport={{ once: true }}
-                      className="group relative"
+                      whileHover={{ scale: 1.01 }}
+                      className="group"
                     >
-                      <div className="p-4 bg-gradient-to-r from-pink-50 to-purple-50 border border-pink-100 rounded-xl hover:shadow-md hover:border-pink-200 transition-all duration-300">
-                        <h4 className="text-sm font-semibold text-gray-800 mb-2">
+                      <div className="p-5 rounded-xl bg-white shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-md hover:border-pink-200">
+                        <h4 className="text-lg font-semibold text-gray-800 mb-2 group-hover:text-pink-600 transition-colors duration-300">
                           {skill.name}
                         </h4>
-                        <p className="text-xs text-gray-600">
+                        <p className="text-sm text-gray-600 leading-relaxed">
                           {skill.description}
                         </p>
                       </div>
@@ -327,6 +355,46 @@ const About = () => {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        .butterfly-elegant {
+          filter: drop-shadow(0 0 20px rgba(236, 72, 153, 0.4));
+          transition: all 0.5s ease;
+        }
+
+        .butterfly-elegant-medium {
+          filter: drop-shadow(0 0 15px rgba(236, 72, 153, 0.35));
+          transition: all 0.5s ease;
+        }
+
+        .butterfly-elegant-small {
+          filter: drop-shadow(0 0 12px rgba(236, 72, 153, 0.3));
+          transition: all 0.5s ease;
+        }
+
+        .butterfly-elegant-tiny {
+          filter: drop-shadow(0 0 10px rgba(236, 72, 153, 0.25));
+          transition: all 0.5s ease;
+        }
+
+        .butterfly-elegant:hover,
+        .butterfly-elegant-medium:hover,
+        .butterfly-elegant-small:hover,
+        .butterfly-elegant-tiny:hover {
+          filter: drop-shadow(0 0 25px rgba(236, 72, 153, 0.6));
+          transform: scale(1.05);
+        }
+
+        @keyframes gentle-float {
+          0%,
+          100% {
+            transform: translateY(0) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-5px) rotate(2deg);
+          }
+        }
+      `}</style>
     </section>
   );
 };

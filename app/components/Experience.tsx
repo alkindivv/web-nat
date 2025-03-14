@@ -76,10 +76,12 @@ const Experience = () => {
             viewport={{ once: true }}
             className="mb-12 sm:mb-16"
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center">
+            {/* <h2 className="text-2xl sm:text-3xl font-bold text-center"> */}
+            <h2 className="text-4xl sm:text-5xl  font-bold text-center font-dancing">
               <span className="relative inline-block">
+                <span className="">Work</span>{" "}
                 <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
-                  Pengalaman
+                  Experince
                 </span>
                 <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-pink-600/30 to-purple-600/30 rounded-full"></span>
               </span>
@@ -98,7 +100,7 @@ const Experience = () => {
               >
                 {/* Connection line */}
                 {index !== experiences.length - 1 && (
-                  <div className="absolute left-8 top-[4.5rem] bottom-0 w-px bg-gradient-to-b from-pink-200 to-purple-200/30 hidden sm:block"></div>
+                  <div className="absolute left-8 top-[4.5rem] bottom-0 w-px bg-gradient-to-b from-pink-600 to-purple-600 hidden sm:block"></div>
                 )}
 
                 <div className="relative flex items-start gap-6 p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-purple-100/50 shadow-sm hover:shadow-md transition-all duration-300 hover:translate-y-[-2px]">
@@ -123,7 +125,7 @@ const Experience = () => {
                       </div>
                     </div>
                     {/* Timeline dot */}
-                    <div className="absolute top-0 left-0 w-3 h-3 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 transform -translate-x-1/2 hidden sm:block"></div>
+                    <div className="absolute top-0 left-0 w-3 h-3 rounded-full bg-gradient-to-r from-pink-400 to-pink-300  transform -translate-x-1/2 hidden sm:block"></div>
                   </div>
 
                   {/* Content */}
@@ -135,8 +137,8 @@ const Experience = () => {
                           {experience.title}
                         </h3>
                         <div className="flex items-center gap-2 mt-1">
-                          <BuildingOfficeIcon className="w-4 h-4 text-purple-500" />
-                          <p className="text-base text-purple-600 font-medium">
+                          <BuildingOfficeIcon className="w-4 h-4 text-pink-600" />
+                          <p className="text-base font-medium bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
                             {experience.company}
                           </p>
                         </div>

@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { HiArrowDown } from "react-icons/hi";
+import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
 
 const socialLinks = [
   {
@@ -42,7 +43,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center lg:text-left order-2 lg:order-1"
+            className="text-left lg:text-left order-2 lg:order-1"
           >
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -50,10 +51,10 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="font-bold leading-tight"
             >
-              <span className="text-gray-700 text-base sm:text-xl md:text-2xl lg:text-3xl font-medium">
-                Halo, saya{" "}
+              <span className="text-gray-700 text-xl sm:text-2xl font-medium">
+                Hello, I'm{" "}
               </span>{" "}
-              <span className="block mt-1 sm:mt-2 lg:mt-3 bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent text-[2.25rem] sm:text-[2.7rem] max-w-[1000px] mx-auto lg:mx-0">
+              <span className="font-bold block mt-1 sm:mt-1 bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent text-[2.25rem] sm:text-[2.7rem] max-w-[1000px] mx-auto lg:mx-0">
                 Natasya Artameivia
               </span>
             </motion.h1>
@@ -84,19 +85,19 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4"
+              className="mt-6 sm:mt-8 flex flex-row sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4"
             >
               <Link
                 href="#contact"
                 className="px-5 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-pink-600 to-purple-600 text-white rounded-full font-medium shadow-lg shadow-pink-500/20 hover:shadow-xl hover:shadow-pink-500/30 transition-all duration-300 text-sm sm:text-base w-full sm:w-auto text-center"
               >
-                Hubungi Saya
+                Resume
               </Link>
               <Link
                 href="#about"
                 className="px-5 sm:px-6 py-2.5 sm:py-3 border border-pink-200 text-gray-700 rounded-full font-medium hover:bg-pink-50 transition-colors duration-300 text-sm sm:text-base w-full sm:w-auto text-center"
               >
-                Tentang Saya
+                About Me
               </Link>
             </motion.div>
 
@@ -105,7 +106,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1 }}
-              className="mt-6 sm:mt-8 flex items-center justify-center lg:justify-start gap-4"
+              className="mt-6 sm:mt-8 flex items-center justify-start lg:justify-start gap-4"
             >
               <span className="text-xs sm:text-sm text-gray-500">
                 Follow me:
