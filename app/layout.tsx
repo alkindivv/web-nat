@@ -22,39 +22,50 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Natya Paramita - Communication & PR Specialist",
+  title: "Natasya Artameivia Zulfi - Marketing & Communications Professional",
   description:
-    "Portfolio website Natya Paramita, seorang Communication & Public Relations Specialist dengan pengalaman di berbagai industri dan proyek.",
+    "Portfolio website Natasya Artameivia Zulfi, seorang Marketing & Communications Professional dengan pengalaman di BNI, PLN Batam, dan Thamrin Group.",
   keywords: [
-    "Natya Paramita",
-    "Communication Specialist",
+    "Natasya Artameivia Zulfi",
+    "Marketing Professional",
+    "Communications Specialist",
     "Public Relations",
-    "PR Specialist",
     "Marketing Communications",
     "Corporate Communications",
     "Event Management",
     "Media Relations",
     "Content Strategy",
     "Brand Management",
+    "PLN Batam",
+    "BNI",
+    "Thamrin Group",
   ],
-  authors: [{ name: "Natya Paramita" }],
-  creator: "Natya Paramita",
-  publisher: "Natya Paramita",
+  authors: [{ name: "Natasya Artameivia Zulfi" }],
+  creator: "Natasya Artameivia Zulfi",
+  publisher: "Natasya Artameivia Zulfi",
   openGraph: {
     type: "website",
     locale: "id_ID",
-    url: "https://natyaparamita.com",
-    title: "Natya Paramita - Communication & PR Specialist",
+    url: "https://natandkind.de",
+    title: "Natasya Artameivia Zulfi - Marketing & Communications Professional",
     description:
-      "Portfolio website Natya Paramita, seorang Communication & Public Relations Specialist dengan pengalaman di berbagai industri dan proyek.",
-    siteName: "Natya Paramita Portfolio",
+      "Portfolio website Natasya Artameivia Zulfi, seorang Marketing & Communications Professional dengan pengalaman di BNI, PLN Batam, dan Thamrin Group.",
+    siteName: "Natasya Artameivia Zulfi Portfolio",
+    images: [
+      {
+        url: "/a.jpeg",
+        width: 500,
+        height: 600,
+        alt: "Natasya Artameivia Zulfi",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Natya Paramita - Communication & PR Specialist",
+    title: "Natasya Artameivia Zulfi - Marketing & Communications Professional",
     description:
-      "Portfolio website Natya Paramita, seorang Communication & Public Relations Specialist dengan pengalaman di berbagai industri dan proyek.",
-    creator: "@natyaparamita",
+      "Portfolio website Natasya Artameivia Zulfi, seorang Marketing & Communications Professional dengan pengalaman di BNI, PLN Batam, dan Thamrin Group.",
+    images: ["/a.jpeg"],
   },
   robots: {
     index: true,
@@ -66,6 +77,9 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
+  },
+  alternates: {
+    canonical: "https://natandkind.de",
   },
 };
 
@@ -80,12 +94,16 @@ export default function RootLayout({
       className={`${playfair.variable} ${poppins.variable} ${dancing.variable} scroll-smooth`}
     >
       <head>
-        <link rel="canonical" href="https://natyaparamita.com" />
+        <link rel="canonical" href="https://natandkind.de" />
         <meta name="theme-color" content="#EC4899" />
         <meta
           name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=1"
+          content="width=device-width, initial-scale=1, maximum-scale=5"
         />
+        <meta name="geo.region" content="ID" />
+        <meta name="geo.placename" content="Indonesia" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </head>
       <body
         className={`${poppins.className} antialiased min-h-screen bg-white text-gray-900 overflow-x-hidden`}

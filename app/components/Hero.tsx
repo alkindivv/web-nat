@@ -6,7 +6,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { HiArrowDown } from "react-icons/hi";
-import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
 
 const socialLinks = [
   {
@@ -52,7 +51,7 @@ const Hero = () => {
               className="font-bold leading-tight"
             >
               <span className="text-gray-700 text-xl sm:text-2xl font-medium">
-                Hello, I'm{" "}
+                Hello, I&apos;m{" "}
               </span>{" "}
               <span className="font-bold block mt-1 sm:mt-1 bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent text-[2.25rem] sm:text-[2.7rem] max-w-[1000px] mx-auto lg:mx-0">
                 Natasya Artameivia

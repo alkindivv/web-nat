@@ -7,7 +7,6 @@ import {
   PhoneIcon,
   MapPinIcon,
   PaperAirplaneIcon,
-  HeartIcon,
 } from "@heroicons/react/24/outline";
 import { FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 

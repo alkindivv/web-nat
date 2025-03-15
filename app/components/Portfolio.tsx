@@ -3,11 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import {
-  ChevronRightIcon,
-  ArrowRightIcon,
-  ChevronLeftIcon,
-} from "@heroicons/react/24/outline";
+import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/24/outline";
 
 const portfolioItems = [
   {
@@ -52,13 +48,13 @@ const portfolioItems = [
   },
 ];
 
-const categories = [
-  "All",
-  "Event Management",
-  "Digital Marketing",
-  "Public Relations",
-  "Content Creation",
-];
+// const categories = [
+//   "All",
+//   "Event Management",
+//   "Digital Marketing",
+//   "Public Relations",
+//   "Content Creation",
+// ];
 
 interface ImageSliderProps {
   images: string[];
@@ -211,9 +207,8 @@ interface PortfolioItem {
 }
 
 export default function Portfolio() {
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedCategory] = useState("All");
   const [selectedItem, setSelectedItem] = useState<PortfolioItem | null>(null);
-  const [hoveredItem, setHoveredItem] = useState<number | null>(null);
 
   const filteredItems =
     selectedCategory === "All"
@@ -333,8 +328,6 @@ export default function Portfolio() {
                 className={`relative ${
                   item.featured ? "md:col-span-8" : "md:col-span-4"
                 } group cursor-pointer`}
-                onMouseEnter={() => setHoveredItem(index)}
-                onMouseLeave={() => setHoveredItem(null)}
                 onClick={() => setSelectedItem(item)}
               >
                 <div className="relative group">

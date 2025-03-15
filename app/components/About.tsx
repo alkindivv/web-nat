@@ -3,7 +3,6 @@ import Image from "next/image";
 import {
   HeartIcon,
   SparklesIcon,
-  UserIcon,
   BriefcaseIcon,
   StarIcon,
   TrophyIcon,
