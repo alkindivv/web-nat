@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import Image from "next/image";
 import {
   HeartIcon,
@@ -134,14 +133,8 @@ const About = () => {
 
       <div className="layout-container mx-auto relative z-10 px-4 sm:px-6">
         <div className="content-wrapper max-w-7xl mx-auto relative">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="mb-12 sm:mb-16"
-          >
-            <h2 className="text-4xl sm:text-5xl  font-bold text-center font-dancing">
+          <div className="mb-12 sm:mb-16 animate-fade-up">
+            <h2 className="text-4xl sm:text-5xl font-bold text-center font-dancing">
               <span className="relative inline-block">
                 <span className="">About</span>{" "}
                 <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
@@ -150,19 +143,13 @@ const About = () => {
                 <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-pink-600/30 to-purple-600/30 rounded-full"></span>
               </span>
             </h2>
-          </motion.div>
+          </div>
 
           <div className="flex flex-col gap-16">
             {/* Top Section: Image and Main Description */}
             <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
               {/* Enhanced Image Column */}
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className="lg:col-span-2 relative mx-auto lg:mx-0 max-w-md"
-              >
+              <div className="lg:col-span-2 relative mx-auto lg:mx-0 max-w-md animate-slide-in-left">
                 <div className="relative group">
                   {/* Decorative frame with animation */}
                   <div className="absolute -top-4 -left-4 w-full h-full border-t-2 border-l-2 border-pink-300/50 rounded-tl-3xl transition-all duration-300 group-hover:border-pink-400/70 group-hover:-translate-x-1 group-hover:-translate-y-1"></div>
@@ -181,16 +168,10 @@ const About = () => {
                     />
                   </div>
                 </div>
-              </motion.div>
+              </div>
 
               {/* Main Description */}
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="lg:col-span-3 space-y-6"
-              >
+              <div className="lg:col-span-3 space-y-6 animate-slide-in-right">
                 <div className="flex items-center gap-3 mb-1">
                   {/* <div className="p-2 rounded-xl bg-gradient-to-br from-pink-100 to-purple-100">
                     <UserIcon className="w-6 h-6 text-purple-600" />
@@ -223,17 +204,11 @@ const About = () => {
                     nasabah.
                   </p>
                 </div>
-              </motion.div>
+              </div>
             </div>
 
             {/* Middle Section: Additional Description */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="max-w-full lg:ml-0 space-y-0 sm:space-y-4 lg:pr-0"
-            >
+            <div className="max-w-full lg:ml-0 space-y-0 sm:space-y-4 lg:pr-0 animate-fade-up [animation-delay:200ms]">
               <p className="text-base text-gray-600 leading-relaxed">
                 Sebagai{" "}
                 <span className="text-pink-600 font-medium">
@@ -253,18 +228,12 @@ const About = () => {
                 kuat dalam menciptakan konten yang menarik dan strategi
                 komunikasi yang efektif untuk mencapai tujuan organisasi.
               </p>
-            </motion.div>
+            </div>
 
             {/* Bottom Section: Stats and Skills in Two Columns */}
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
               {/* Stats Column */}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className="space-y-8"
-              >
+              <div className="space-y-8 animate-slide-in-left [animation-delay:400ms]">
                 <div className="flex items-center gap-4">
                   <div className="p-2.5 rounded-xl bg-gradient-to-br from-pink-100 to-purple-100 shadow-sm">
                     <TrophyIcon className="w-6 h-6 text-pink-600" />
@@ -275,14 +244,10 @@ const About = () => {
                 </div>
                 <div className="grid grid-cols-1 gap-4">
                   {stats.map((stat, index) => (
-                    <motion.div
+                    <div
                       key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, delay: 0.1 * index }}
-                      viewport={{ once: true }}
-                      whileHover={{ scale: 1.01 }}
-                      className="group"
+                      className="group animate-fade-up"
+                      style={{ animationDelay: `${index * 100}ms` }}
                     >
                       <div className="p-4 sm:p-7 rounded-xl bg-white shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-md hover:border-pink-200">
                         <div className="flex items-start gap-4">
@@ -306,19 +271,13 @@ const About = () => {
                           </div>
                         </div>
                       </div>
-                    </motion.div>
+                    </div>
                   ))}
                 </div>
-              </motion.div>
+              </div>
 
               {/* Skills Column */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className="space-y-8"
-              >
+              <div className="space-y-8 animate-slide-in-right [animation-delay:400ms]">
                 <div className="flex items-center gap-4">
                   <div className="p-2.5 rounded-xl bg-gradient-to-br from-pink-100 to-purple-100 shadow-sm">
                     <SparklesIcon className="w-6 h-6 text-pink-600" />
@@ -329,14 +288,10 @@ const About = () => {
                 </div>
                 <div className="grid grid-cols-1 gap-4">
                   {skills.map((skill, index) => (
-                    <motion.div
+                    <div
                       key={index}
-                      initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.4, delay: 0.1 * index }}
-                      viewport={{ once: true }}
-                      whileHover={{ scale: 1.01 }}
-                      className="group"
+                      className="group animate-fade-up"
+                      style={{ animationDelay: `${index * 100}ms` }}
                     >
                       <div className="p-5 rounded-xl bg-white shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-md hover:border-pink-200">
                         <h4 className="text-lg font-semibold text-gray-800 mb-2 group-hover:text-pink-600 transition-colors duration-300">
@@ -346,10 +301,10 @@ const About = () => {
                           {skill.description}
                         </p>
                       </div>
-                    </motion.div>
+                    </div>
                   ))}
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </div>

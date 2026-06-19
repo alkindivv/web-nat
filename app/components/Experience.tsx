@@ -1,11 +1,8 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import {
   BriefcaseIcon,
-  CalendarIcon,
-  BuildingOfficeIcon,
   ChevronRightIcon,
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
@@ -44,67 +41,47 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="layout-section py-14 sm:py-16 md:py-20 relative overflow-hidden"
+      className="layout-section py-16 sm:py-20 relative overflow-hidden"
     >
-      {/* Background Pattern */}
+      {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Main gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-bl from-pink-50 via-purple-50 to-white"></div>
-
-        {/* Decorative circles */}
-        <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-pink-200/20 to-purple-200/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-br from-purple-200/20 to-pink-200/20 rounded-full blur-3xl"></div>
-
-        {/* Subtle pattern overlay */}
-        <div className="absolute inset-0 opacity-30 mix-blend-soft-light">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `radial-gradient(circle at 2px 2px, rgba(168,85,247,0.1) 1px, transparent 0)`,
-              backgroundSize: "24px 24px",
-            }}
-          ></div>
-        </div>
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-pink-50 to-white opacity-80"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-purple-200/20 to-pink-200/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-br from-pink-200/20 to-purple-200/20 rounded-full blur-3xl"></div>
       </div>
 
       <div className="layout-container relative z-10 px-4 sm:px-6">
         <div className="content-wrapper max-w-5xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="mb-12 sm:mb-16"
-          >
-            {/* <h2 className="text-2xl sm:text-3xl font-bold text-center"> */}
-            <h2 className="text-4xl sm:text-5xl  font-bold text-center font-dancing">
+          <div className="mb-12 sm:mb-16 animate-fade-up">
+            <h2 className="text-4xl sm:text-5xl font-bold text-center font-dancing">
               <span className="relative inline-block">
                 <span className="">Work</span>{" "}
                 <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
-                  Experince
+                  Experience
                 </span>
                 <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-pink-600/30 to-purple-600/30 rounded-full"></span>
               </span>
             </h2>
-          </motion.div>
+          </div>
 
-          <div className="space-y-8">
+          <div className="relative">
+            {/* Timeline line */}
+            <div className="absolute left-8 sm:left-1/2 top-0 h-full w-px bg-gradient-to-b from-pink-200 to-purple-200 transform -translate-x-px hidden sm:block"></div>
+
             {experiences.map((experience, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className="group relative"
+                className={`group mb-8 sm:mb-12 last:mb-0 animate-fade-up`}
+                style={{ animationDelay: `${index * 150}ms` }}
               >
-                {/* Connection line */}
-                {index !== experiences.length - 1 && (
-                  <div className="absolute left-8 top-[4.5rem] bottom-0 w-px bg-gradient-to-b from-pink-600 to-purple-600 hidden sm:block"></div>
-                )}
-
-                <div className="relative flex items-start gap-6 p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-purple-100/50 shadow-sm hover:shadow-md transition-all duration-300 hover:translate-y-[-2px]">
-                  {/* Left side - Timeline and Icon/Logo */}
+                <div
+                  className={`flex flex-col sm:flex-row gap-4 sm:gap-8 items-start ${
+                    index % 2 === 0
+                      ? "sm:pr-1/2"
+                      : "sm:pl-1/2 sm:flex-row-reverse"
+                  }`}
+                >
+                  {/* Logo/Icon Container */}
                   <div className="relative">
                     <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-pink-100 to-purple-100 p-0.5">
                       <div className="w-full h-full rounded-xl bg-white flex items-center justify-center relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
@@ -125,50 +102,57 @@ const Experience = () => {
                       </div>
                     </div>
                     {/* Timeline dot */}
-                    <div className="absolute top-0 left-0 w-3 h-3 rounded-full bg-gradient-to-r from-pink-400 to-pink-300  transform -translate-x-1/2 hidden sm:block"></div>
+                    <div className="absolute top-0 left-0 w-3 h-3 rounded-full bg-gradient-to-r from-pink-400 to-pink-300 transform -translate-x-1/2 hidden sm:block"></div>
                   </div>
 
                   {/* Content */}
-                  <div className="flex-1 space-y-4">
-                    {/* Header */}
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-4">
-                      <div>
-                        <h3 className="text-xl font-semibold text-gray-800 group-hover:text-pink-600 transition-colors duration-300">
-                          {experience.title}
-                        </h3>
-                        <div className="flex items-center gap-2 mt-1">
-                          <BuildingOfficeIcon className="w-4 h-4 text-pink-600" />
-                          <p className="text-base font-medium bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
+                  <div className="flex-1">
+                    <div className="bg-white rounded-xl p-6 shadow-sm border border-pink-100/50 transition-all duration-300 hover:shadow-md hover:border-pink-200 relative">
+                      {/* Decorative arrow */}
+                      <div className="absolute top-6 -left-2 w-4 h-4 bg-white border-l border-t border-pink-100/50 transform rotate-45 hidden sm:block"></div>
+
+                      <div className="space-y-4">
+                        <div>
+                          <h3 className="text-lg font-semibold text-gray-800 group-hover:text-pink-600 transition-colors duration-300">
+                            {experience.title}
+                          </h3>
+                          <p className="text-base font-medium text-pink-600">
                             {experience.company}
                           </p>
+                          <p className="text-sm text-gray-500">
+                            {experience.period}
+                          </p>
                         </div>
-                      </div>
-                      <div className="flex items-center gap-2 text-gray-500 bg-purple-50/50 px-3 py-1 rounded-full border border-purple-100/50">
-                        <CalendarIcon className="w-4 h-4" />
-                        <p className="text-sm">{experience.period}</p>
-                      </div>
-                    </div>
 
-                    {/* Description */}
-                    <p className="text-gray-600 leading-relaxed">
-                      {experience.description}
-                    </p>
+                        <div className="space-y-3">
+                          <p className="text-sm text-gray-600 leading-relaxed">
+                            {experience.description}
+                          </p>
+                        </div>
 
-                    {/* Skills */}
-                    <div className="flex flex-wrap gap-2">
-                      {experience.skills.map((skill, skillIndex) => (
-                        <span
-                          key={skillIndex}
-                          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-medium bg-gradient-to-r from-pink-50 to-purple-50 text-gray-700 border border-pink-100/50 group-hover:border-pink-200/50 transition-colors duration-300"
-                        >
-                          <ChevronRightIcon className="w-3 h-3 text-pink-500" />
-                          {skill}
-                        </span>
-                      ))}
+                        {experience.skills && (
+                          <div className="space-y-2">
+                            <h4 className="text-sm font-semibold text-gray-700">
+                              Skills:
+                            </h4>
+                            <div className="flex flex-wrap gap-2">
+                              {experience.skills.map((skill, skillIndex) => (
+                                <span
+                                  key={skillIndex}
+                                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-medium bg-gradient-to-r from-pink-50 to-purple-50 text-gray-700 border border-pink-100/50 group-hover:border-pink-200/50 transition-colors duration-300"
+                                >
+                                  <ChevronRightIcon className="w-3 h-3 text-pink-500" />
+                                  {skill}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
